@@ -11,11 +11,11 @@
         <ul class="order__list order-list">
           <li class="order-list__item" v-for="item in steps" :key="item">
             <OrderStep :img="item.img" :text="item.text" />
-            <!--            <ul class="dots">-->
-            <!--              <li class="dots__item" v-for="item in 5" :key="item"></li>-->
-            <!--            </ul>-->
+            <ul class="dots">
+              <li class="dots__item" v-for="item in 5" :key="item"></li>
+            </ul>
           </li>
-          <li class="order-list__dots">
+          <li class="order-list__dots" v-if="false">
             <span v-for="i in 35" :key="i"></span>
           </li>
         </ul>
@@ -30,6 +30,27 @@ import OrderStep from "@/components/Order/OrderStep";
 import OrderForm from "@/components/Order/OrderForm";
 
 const steps = [
+  {
+    img: require("@/assets/img/search.svg"),
+    text: "Lorem ipsum dolor sit amet",
+  },
+  {
+    img: require("@/assets/img/percent.svg"),
+    text: "Сonsecteturadipiscing elit",
+  },
+  {
+    img: require("@/assets/img/document.svg"),
+    text: "Sed do eiusmod tempor",
+  },
+  {
+    img: require("@/assets/img/message.svg"),
+    text: "Esse cillum dolore eu fugiat",
+  },
+  {
+    img: require("@/assets/img/money.svg"),
+    text: "Excepteur sint occaecat cupidatat non proident",
+  },
+
   {
     img: require("@/assets/img/search.svg"),
     text: "Lorem ipsum dolor sit amet",
@@ -102,6 +123,7 @@ export default {
   &__list {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     margin-bottom: 80px;
     position: relative;
     flex-wrap: wrap;
@@ -112,9 +134,74 @@ export default {
   }
 
   &-list {
+    @media screen and (max-width: 720px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 480px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     &__item {
       position: relative;
       z-index: 1;
+      flex-shrink: 0;
+      & .dots {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 47px;
+        left: 160px;
+        z-index: -1;
+        &__item {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: var(--white);
+        }
+      }
+      &:nth-child(5n) {
+        .dots {
+          display: none;
+          @media screen and (max-width: 1059px) {
+            display: flex;
+          }
+          @media screen and (max-width: 720px) {
+            display: none;
+          }
+        }
+      }
+      &:nth-child(4n) {
+        .dots {
+          @media screen and (max-width: 1059px) {
+            display: none;
+          }
+          @media screen and (max-width: 839px) {
+            display: flex;
+          }
+          @media screen and (max-width: 720px) {
+            display: none;
+          }
+        }
+      }
+      &:nth-child(3n) {
+        .dots {
+          @media screen and (max-width: 839px) {
+            display: none;
+          }
+        }
+      }
+      &:last-child {
+        .dots {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 720px) {
+        .dots {
+          display: none;
+        }
+      }
     }
     &__dots {
       display: flex;
