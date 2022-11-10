@@ -50,27 +50,6 @@ const steps = [
     img: require("@/assets/img/money.svg"),
     text: "Excepteur sint occaecat cupidatat non proident",
   },
-
-  {
-    img: require("@/assets/img/search.svg"),
-    text: "Lorem ipsum dolor sit amet",
-  },
-  {
-    img: require("@/assets/img/percent.svg"),
-    text: "Сonsecteturadipiscing elit",
-  },
-  {
-    img: require("@/assets/img/document.svg"),
-    text: "Sed do eiusmod tempor",
-  },
-  {
-    img: require("@/assets/img/message.svg"),
-    text: "Esse cillum dolore eu fugiat",
-  },
-  {
-    img: require("@/assets/img/money.svg"),
-    text: "Excepteur sint occaecat cupidatat non proident",
-  },
 ];
 
 export default {

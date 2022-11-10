@@ -7,7 +7,7 @@
         default="Выберите тип системы"
         class="select"
       />
-      <main-input name="name" placeholder="Ваше имя" />
+      <main-input name="email" placeholder="Ваше e-mail" />
       <main-input name="name" placeholder="Ваше имя" />
     </div>
     <div class="order-form__mid">
